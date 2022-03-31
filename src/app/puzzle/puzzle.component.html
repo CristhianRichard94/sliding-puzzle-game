@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="card">
+        <h1>Sliding Puzzle Game</h1>
+        <div class="puzzle">
+            <app-piece *ngFor="let piece of iPieces" [iPiece]="piece" [ngStyle]="{'top': ((piece.y -1) /iParts) *100+'%',
+            'left': ((piece.x-1) /iParts) *100+'%' }" (click)="pieceClicked(piece)"></app-piece>
+        </div>
+        <div class="options">
+            <label>
+                <select name="Difficulty" (change)="updatePuzzle(select.value)" #select>
+                    <option hidden selected>Change Difficulty</option>
+                    <option *ngFor="let opt of iDifficulties" [value]="opt">{{opt}}</option>
+                </select>
+            </label>
+            <input type="file" accept="image/*" class="hidden" (change)="imgLoaded(input)" #input>
+            <button (click)="input.click()">Play with your Photo</button>
+            <button (click)="getRandomImage()">Get random image</button>
+            <button (click)="updatePuzzle(4)">Restart</button>
+            <button (click)="solve()">{{iAutoPlaying ? 'Stop autoplay': 'Autoplay' }}</button>
+        </div>
+        <p>Made by Cristhian Richard</p>
+    </div>
+    <div class="popup" *ngIf="iHaveWon">
+        <h1>
+            You win the game.
+        </h1>
+        <p>
+            Do you want to play again?
+        </p>
+        <button (click)="wonPuzzle()">Close</button>
+    </div>
+    <div class="backdrop" *ngIf="iHaveWon"></div>
+</div>

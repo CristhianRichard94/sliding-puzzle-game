@@ -1,0 +1,9 @@
+<div #imageContainer [ngStyle]="{
+    'height': 500 / this.iParts +'px',
+    'width': 500 / this.iParts +'px'}">
+    <img [src]="iImageSource" #image [ngStyle]="{
+        'cursor': iCanMove ? 'pointer': 'initial',
+            'top': (1 - this.iPiece.y0) * 100+'%',
+                'left': (1 - this.iPiece.x0) * 100+'%'
+            }" (mousedown)="false" (load)="imgLoad(image)">
+</div>
