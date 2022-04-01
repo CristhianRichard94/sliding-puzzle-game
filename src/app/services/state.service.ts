@@ -10,7 +10,7 @@ export class StateService {
   iImageSize$ = new BehaviorSubject({ height: '', width: '' });
   iFreePlace$ = new BehaviorSubject({ x: 0, y: 0 });
   iPieces$: BehaviorSubject<Piece[]> = new BehaviorSubject([]);
-  iImage$ = new BehaviorSubject('../assets/monks.jpg');
+  iImage$ = new BehaviorSubject('');
   constructor(private iHttpClient: HttpClient) {
     this.initializePuzzle();
   }
