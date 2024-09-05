@@ -29,7 +29,7 @@ export class PuzzleComponent implements OnInit {
       this.iImageSize.width = '500px';
       this.iImageSize.height = '500px';
     });
-    this.getRandomImage();
+    // this.getRandomImage();
   }
 
   pieceClicked(pPiece: Piece) {

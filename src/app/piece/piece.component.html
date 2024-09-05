@@ -1,9 +1,19 @@
-<div #imageContainer [ngStyle]="{
-    'height': 500 / this.iParts +'px',
-    'width': 500 / this.iParts +'px'}">
-    <img [src]="iImageSource" #image [ngStyle]="{
-        'cursor': iCanMove ? 'pointer': 'initial',
-            'top': (1 - this.iPiece.y0) * 100+'%',
-                'left': (1 - this.iPiece.x0) * 100+'%'
-            }" (mousedown)="false" (load)="imgLoad(image)">
+<div
+  #imageContainer
+  [ngStyle]="{
+    height: 500 / this.iParts + 'px',
+    width: 500 / this.iParts + 'px'
+  }"
+>
+  <img
+    src="https://img.freepik.com/vector-gratis/fondo-colorido-rompecabezas_1308-117515.jpg?t=st=1725572912~exp=1725576512~hmac=b780ad42967fcde55f4cb710b098bdd289931453d1f6491d5ed9f9fb93a4dc4d&w=740"
+    #image
+    [ngStyle]="{
+      cursor: iCanMove ? 'pointer' : 'initial',
+      top: (1 - this.iPiece.y0) * 100 + '%',
+      left: (1 - this.iPiece.x0) * 100 + '%'
+    }"
+    (mousedown)="(false)"
+    (load)="imgLoad(image)"
+  />
 </div>
